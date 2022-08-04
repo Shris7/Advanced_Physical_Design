@@ -125,9 +125,25 @@ Power planning is mesh/grid kind of structure that is responsible for supplying 
 Pin placement is the process of placing input or output pins in the space between the core and die.Different types of pin placement include high density placement and equidistant placement.
 Logical cell placement blockage ensure no logical cell will be placed in the area between core and die.
 
+### Floorplanning Using OpenLANE
+Floorplanning in OpenLANE is done using the following command:
+```run_floorplan```
+The result of this is a ```def``` file.
+![image](https://user-images.githubusercontent.com/92938137/182833333-f09be8af-ba55-432f-a6c0-5e5ebe1b7b9b.png)
+![image](https://user-images.githubusercontent.com/92938137/182840953-616fb0c9-87d6-4e75-90f0-cb1c6cfe4c74.png)
 
+### Review floorplan layout using Magic
+To visualix=ze the layout after floorplan we use magic. We need three files:Tech file(```sky130A.tech```),Merged lef file(```merged.lef```) and the ```def``` file.
 
+![image](https://user-images.githubusercontent.com/92938137/182842391-714a825f-166d-4ff7-9d5a-0843ce703873.png)
+![image](https://user-images.githubusercontent.com/92938137/182842902-fedd5adb-79dc-4870-9a8a-a24d0aa3198a.png)
 
+## Library Binding and Placement
+### Placement
+Once floorplanning is done,the next step is placement.Placement places the cells on the chip in the appropriate location. It optimizes the design therby removing any timing voilations present.
 
+### Placement using OpenLANE
+Placement is done using the command:
+```run_placement```
 
 
