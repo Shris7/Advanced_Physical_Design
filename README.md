@@ -15,8 +15,12 @@ This file contains the information learnt during the [Advanced Physical Design](
       -   [Initialisation of OpenLANE](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#initialisation-of-openlane)
       -   [Design Preperation Step](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#design-preperation-step)
       -   [Run Synthesis](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#run-synthesis)   
- 
- 
+ - [Day 2: Good floorplan vs bad floorplan and introduction to library cells](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#day-2-good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
+   - [Chip Floor planning Consideration](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#chip-floor-planning-consideration)
+      - [Utilization Factor and aspect Ratio](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#utilization-factor-and-aspect-ratio) 
+      - [Pre-placed Cells and De-coupling Capacitors](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#pre-placed-cells-and-de-coupling-capacitors)
+      - [Power Planning](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#power-planning)
+      - [Pin Placement and Logical Cell Placement Blockage](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#pin-placement-and-logical-cell-placement-blockage)
  # Intoduction To RTL to GDSII flow
  RTL to GDSII flow is the process of converting a RTL design that is, a register to transfer level that consists of synchronous digital blocks and signals between the hardware registers and the logical operations performed on these signals, to a GDSII design which is a database file. GDSII is the de facto industry standard for EDA data exchange for integrated circuits.
  A complete RTL to GDSII flow consists of the following steps:
@@ -42,7 +46,7 @@ This file contains the information learnt during the [Advanced Physical Design](
  ## How to talk to computers
  ### Intordution to die,core,pads
  Before we start with the RTL2GDSII flow we must first familiarize ourselves with some terms.
- - Die : it is a block of semiconductor material on which a given circuit is fabricated.
+ - Die : it is a block of semiconductor material on which a given circuit is fabricated.It surrounds the core.
  - Core : is the region in a chip where the logic of the design is placed.
  - Pad : are intermediate structures connecting the internal signals to the external pins of a chip package.
  ![image](https://user-images.githubusercontent.com/92938137/182757008-5a5db95e-518b-40ca-8d93-600c260f6c7b.png)
@@ -98,3 +102,32 @@ Flop count = 0.108423 = 10.843%
 
 ![image](https://user-images.githubusercontent.com/92938137/182761915-dc800564-52bc-4689-863c-9206f4d69349.png)
 ![image](https://user-images.githubusercontent.com/92938137/182761951-2ffe8b82-507f-42cd-992c-8586db4f6386.png)
+
+
+# Day 2: Good floorplan vs bad floorplan and introduction to library cells
+## Chip Floor planning Consideration
+Floorplanning involves determining the shape,size and location of modules in a chip and also estimating the chip area,delay and thus providing a ground work for building a layout.
+The modules are optimized in such a way that we can reduce the area occupied by them.
+
+### Utilization Factor and aspect Ratio
+Utilization factor is defined as the ratio of the area occupied by the netlist to the area of the core.Theoritically it is 1 or 100% utilization and practically it is 0.5/0.6 or 50%-60% utilization.
+Aspect ratio is the ratio of height to width of the core.If aspect ratio is 1 it implies that our chip is square shaped.
+
+### Pre-placed Cells and De-coupling Capacitors
+Pre-placed cells are pre-defined cells or built-in cells. They can be macros or IPs.
+The location of these cells depends on its connectivity with the netlist.These IPs have user-defined loactions and hence are placed in a chip before automated placement and routing and thus the name pre-placed cells.
+De-coupling capacitors are responsible for charging/discharging the capacitors in the pre-placed cells completely.
+
+### Power Planning
+Power planning is mesh/grid kind of structure that is responsible for supplying power equally to the cells at any point in the cell or chip block.This takes care of the global communication in a chip. They ensure there is no sudden droop in the supply voltage or ground bounce.
+
+### Pin Placement and Logical Cell Placement Blockage
+Pin placement is the process of placing input or output pins in the space between the core and die.Different types of pin placement include high density placement and equidistant placement.
+Logical cell placement blockage ensure no logical cell will be placed in the area between core and die.
+
+
+
+
+
+
+
