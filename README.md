@@ -24,8 +24,11 @@ This file contains the information learnt during the [Advanced Physical Design](
     - [Library Binding and Placement](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#library-binding-and-placement)
       - [Placement](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#placement)
       - [Placement using OpenLANE](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#placement-using-openlane)
-      
-      
+  - [ Cell Design and Charecterization Flows](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#cell-design-and-charecterization-flows)
+   - [Inputs](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#inputs)
+   - [Design Steps](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#design-steps)
+   - [Outputs](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#outputs)
+   - [Characterization flow](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#characterization-flow) 
  # Intoduction To RTL to GDSII flow
  RTL to GDSII flow is the process of converting a RTL design that is, a register to transfer level that consists of synchronous digital blocks and signals between the hardware registers and the logical operations performed on these signals, to a GDSII design which is a database file. GDSII is the de facto industry standard for EDA data exchange for integrated circuits.
  A complete RTL to GDSII flow consists of the following steps:
@@ -151,4 +154,39 @@ Once floorplanning is done,the next step is placement.Placement places the cells
 Placement is done using the command:
 ```run_placement```
 
+Placement in OpenLANE occurs in 2 stages:
+- Global Placement
+- Detailed Placement
 
+![image](https://user-images.githubusercontent.com/92938137/182850293-bacbe177-2ac6-48ea-a79b-42ba9d6d9818.png)
+![image](https://user-images.githubusercontent.com/92938137/182850477-af131735-68cb-4974-86b3-a1df56ae54dd.png)
+![image](https://user-images.githubusercontent.com/92938137/182850890-ca606e86-3902-413a-a709-df44f2831769.png)
+
+## Cell Design and Charecterization Flows
+Cell design flow comprises of stages that provides entire flow for the design of standard cells.
+Standard cells are present in a library and they have information of the different componenets,their functionality and sizes too. The sizes of a componenet refers to their drive strength.It also has information on different threshold voltage which inadvertly affect the speed of the component.
+Cell Design flow has 3 typical steps:
+- Inputs
+- Design Steps
+- Outputs
+
+![image](https://user-images.githubusercontent.com/92938137/182854282-3538eef0-ade4-4f72-a214-f61def1a71ea.png)
+
+### Inputs
+Inputs include:
+- Process design kits(PDKs)
+- DRC and LVS rules,SPICE Models
+- Library and User-Defined specs
+
+### Design Steps
+Design steps include:
+- Circuit Design
+- Layout Design
+- Characterization
+### Outputs
+Ouptus include:
+- CDL(Circuit Description Language)
+- GDSII,LEF,extracted spice netlist(.cir)
+- Timing,noise,power.libs,function
+
+### Characterization flow
