@@ -95,5 +95,6 @@ Once the design preperation is done, our first step is to perform synthesis of t
 Flop count = 0.108423 = 10.843%
 
 - Static Report:
+
 ![image](https://user-images.githubusercontent.com/92938137/182761915-dc800564-52bc-4689-863c-9206f4d69349.png)
 ![image](https://user-images.githubusercontent.com/92938137/182761951-2ffe8b82-507f-42cd-992c-8586db4f6386.png)
