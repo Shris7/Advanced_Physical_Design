@@ -26,6 +26,7 @@ This file contains the information learnt during the [Advanced Physical Design](
  - CTS
  - Routing
  - GDSII Streaming
+ 
  ![image](https://user-images.githubusercontent.com/92938137/182756972-cb19a8da-36d1-44ea-80c9-abe59fd562f8.png)
 
  # Open Source Tools Used
@@ -75,5 +76,24 @@ More information can be obtained from [here](https://github.com/efabless/openlan
  ![image](https://user-images.githubusercontent.com/92938137/182760948-22e398ec-c3d0-416e-a645-b89dd6e509eb.png)
 
  ### Design Preperation Step
+ After invoking OpenLANE we must import the package of the required version.This can be done useg the following command:
+ ```package require openalne 0.9```
+ The package version used is 0.9.
+ We next have to prepare our design using the following command:
+ ```prep -design <design-name>.
+ Here since we are working with picorv32a our design-name is picorv32a.
  
  ### Run Synthesis
+Once the design preperation is done, our first step is to perform synthesis of the loaded design. This is done using the following command:
+```run_synthesis```
+
+![image](https://user-images.githubusercontent.com/92938137/182761642-0f2de8f8-9f2d-492d-b060-0dfd6a7806ee.png)
+![image](https://user-images.githubusercontent.com/92938137/182761696-9ab9811d-3efd-4669-8251-48e6629cbf4b.png)
+![image](https://user-images.githubusercontent.com/92938137/182761730-cc886b74-909e-4747-a194-5acf4c25c433.png)
+
+- Task 1: Find the flop count.
+Flop count = 0.108423 = 10.843%
+
+- Static Report:
+![image](https://user-images.githubusercontent.com/92938137/182761915-dc800564-52bc-4689-863c-9206f4d69349.png)
+![image](https://user-images.githubusercontent.com/92938137/182761951-2ffe8b82-507f-42cd-992c-8586db4f6386.png)
