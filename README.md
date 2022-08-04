@@ -51,9 +51,29 @@ This file contains the information learnt during the [Advanced Physical Design](
  
  ## SOC Design and OpenLANE
  ### Introduction to RTL2GDS flow
+ All the pdks are present in the ```pdks/``` directory. 
  
+![image](https://user-images.githubusercontent.com/92938137/182759376-8d1e21b1-8bf5-4983-b86c-1726d083e353.png)
+![image](https://user-images.githubusercontent.com/92938137/182759422-e72ffdf5-8deb-4a15-adab-530fad25903c.png)
+
  ### Introduction to OpenLANE
+ OpenLANE is a open source tool using which we can perfomr a complete RTL to GDSII analysins. It compromises of various open soruce tools such as yosys,magic,netgen,fault, openROAD. The figure below describes the architecture of OpenLANE.
+ 
+ ![image](https://user-images.githubusercontent.com/92938137/182760008-1ce00f18-20e4-4e08-9223-d0694ec9f2af.png)
+
+More information can be obtained from [here](https://github.com/efabless/openlane)
+ 
  ## Open-source EDA tools
  ### Initialisation of OpenLANE
+ OpenLANE can be invoked in linux using docker. We must do this everytime we want to invoke openLANE.This can be done in two ways:
+ - ```docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) openlane:rc6```
+ - ```docker```
+ To invoke openLANE use ```./flow.tcl```
+ Once invoked it can be used in interactive mode or autonomous mode.
+ To use interactive mode uss ```-interactive``` flag with ```./flow.tcl```.
+ 
+ ![image](https://user-images.githubusercontent.com/92938137/182760948-22e398ec-c3d0-416e-a645-b89dd6e509eb.png)
+
  ### Design Preperation Step
+ 
  ### Run Synthesis
