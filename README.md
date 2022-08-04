@@ -2,9 +2,9 @@
 This file contains the information learnt during the [Advanced Physical Design](https://www.vlsisystemdesign.com/advanced-physical-design-using-openlane-sky130/) workshop done using picorv32 core. We perform a complete RTL2GDS Analysis using Openlane.
 
 # Table of Contents
-- [Introduction To RTL to GDSII flow](https://www.vlsisystemdesign.com/advanced-physical-design-using-openlane-sky130/)
+- [Introduction To RTL to GDSII flow]()
 - [Open Source Tools used]()
-- [Day 1]() Inception of open-source EDA,OpenLANE and sky130 PDK
+- [Day 1](): Inception of open-source EDA,OpenLANE and sky130 PDK
    - [How to talk to computers]() 
       -  [Intordution to package,die,core,pads,chips and IPs]()
       -  [Introduction to RISC-V]()
