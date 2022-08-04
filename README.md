@@ -80,7 +80,7 @@ More information can be obtained from [here](https://github.com/efabless/openlan
  ```package require openalne 0.9```
  The package version used is 0.9.
  We next have to prepare our design using the following command:
- ```prep -design <design-name>.
+ ```prep -design <design-name>```.
  Here since we are working with picorv32a our design-name is picorv32a.
  
  ### Run Synthesis
