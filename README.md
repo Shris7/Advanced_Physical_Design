@@ -21,6 +21,11 @@ This file contains the information learnt during the [Advanced Physical Design](
       - [Pre-placed Cells and De-coupling Capacitors](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#pre-placed-cells-and-de-coupling-capacitors)
       - [Power Planning](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#power-planning)
       - [Pin Placement and Logical Cell Placement Blockage](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#pin-placement-and-logical-cell-placement-blockage)
+    - [Library Binding and Placement](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#library-binding-and-placement)
+      - [Placement](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#placement)
+      - [Placement using OpenLANE](https://github.com/Shris7/Advanced_Physical_Design/edit/main/README.md#placement-using-openlane)
+      
+      
  # Intoduction To RTL to GDSII flow
  RTL to GDSII flow is the process of converting a RTL design that is, a register to transfer level that consists of synchronous digital blocks and signals between the hardware registers and the logical operations performed on these signals, to a GDSII design which is a database file. GDSII is the de facto industry standard for EDA data exchange for integrated circuits.
  A complete RTL to GDSII flow consists of the following steps:
