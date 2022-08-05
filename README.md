@@ -31,6 +31,8 @@ This file contains the information learnt during the [Advanced Physical Design](
       - [Characterization flow](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#characterization-flow) 
  - [Day 3: Design Cell Library using Magic Layour and ngspice characterization](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#day-3-design-cell-library-using-magic-layour-and-ngspice-characterization)
      - [Labs for CMOS inverter ngspice simulation](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#labs-for-cmos-inverter-ngspice-simulation)
+     - [Create Standard Cell Layout and Extract SPICE Netlist](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#create-standard-cell-layout-and-extract-spice-netlist)
+     - [Transient Analysis Using Ngspice](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#transient-analysis-using-ngspice)
  # Intoduction To RTL to GDSII flow
  RTL to GDSII flow is the process of converting a RTL design that is, a register to transfer level that consists of synchronous digital blocks and signals between the hardware registers and the logical operations performed on these signals, to a GDSII design which is a database file. GDSII is the de facto industry standard for EDA data exchange for integrated circuits.
  A complete RTL to GDSII flow consists of the following steps:
@@ -207,7 +209,7 @@ The below snapshot shows the inverter layout with and without drc.DRC is a tool 
 
 ![image](https://user-images.githubusercontent.com/92938137/183023531-dcd2e5da-d5ad-466a-955d-54497e391546.png)
 
-##Create Standard Cell Layout and Extract SPICE Netlist
+## Create Standard Cell Layout and Extract SPICE Netlist
 In order to simulate and verify the standard cell designed, we must first extract it to obtain its SPICE netlist. There are two steps to extract a file.
 - Create a ```.ext``` file: ```extract all```
 ![image](https://user-images.githubusercontent.com/92938137/183024993-ce6210be-4457-44b3-b3b3-2d678175dc1e.png)
@@ -219,7 +221,36 @@ In order to simulate and verify the standard cell designed, we must first extrac
 
 - Extract to SPICE along with extracting the parasitic capacitors. This creates a ```.spice``` file.
 ``` ext2spice cthresh 0 rthresh 0```
+
 ```ext2spice```
+
+.spice file:
 
 ![image](https://user-images.githubusercontent.com/92938137/183025499-c9ab9379-2021-4f13-b7a5-82232175337e.png)
 ![image](https://user-images.githubusercontent.com/92938137/183025707-fceb9e6a-55a0-4d1c-ae62-61220c020292.png)
+
+Edited .spice file
+
+![image](https://user-images.githubusercontent.com/92938137/183046129-73bcb09a-388c-4b87-bd03-4bb06e4282f5.png)
+![image](https://user-images.githubusercontent.com/92938137/183049455-c640ad9d-0ccd-46fa-a304-9eecd67b932e.png)
+
+## Transient Analysis Using Ngspice
+The spice netlist generated is provided as source to the ngspice tool using the below command:
+```ngspice<source-file-name.spice>```
+
+Use: ```plot y vs time a``` to plot the graph
+
+![image](https://user-images.githubusercontent.com/92938137/183048662-064270ca-ca54-40ed-a61e-7c54edc8c8bd.png)
+![image](https://user-images.githubusercontent.com/92938137/183048616-9bf494cd-ef27-4bdb-a95d-3953e4c8874e.png)
+![image](https://user-images.githubusercontent.com/92938137/183049712-c086fddb-bee9-4de5-8a29-9d4f5f52b118.png)
+From the graph we characterize the cell.
+Rise time = 0.07823ns
+Cell Rise Delay = 0.05384ns
+Cell Fall Dealy = 0.0289ns
+
+
+
+
+
+
+
