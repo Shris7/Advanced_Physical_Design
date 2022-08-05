@@ -33,6 +33,7 @@ This file contains the information learnt during the [Advanced Physical Design](
      - [Labs for CMOS inverter ngspice simulation](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#labs-for-cmos-inverter-ngspice-simulation)
      - [Create Standard Cell Layout and Extract SPICE Netlist](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#create-standard-cell-layout-and-extract-spice-netlist)
      - [Transient Analysis Using Ngspice](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#transient-analysis-using-ngspice)
+     - [Lab Exercise](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#lab-exercise)
  # Intoduction To RTL to GDSII flow
  RTL to GDSII flow is the process of converting a RTL design that is, a register to transfer level that consists of synchronous digital blocks and signals between the hardware registers and the logical operations performed on these signals, to a GDSII design which is a database file. GDSII is the de facto industry standard for EDA data exchange for integrated circuits.
  A complete RTL to GDSII flow consists of the following steps:
@@ -220,6 +221,7 @@ In order to simulate and verify the standard cell designed, we must first extrac
 ![image](https://user-images.githubusercontent.com/92938137/183024877-46b60f09-ee4a-46a7-8990-d549cd35ae46.png)
 
 - Extract to SPICE along with extracting the parasitic capacitors. This creates a ```.spice``` file.
+
 ``` ext2spice cthresh 0 rthresh 0```
 
 ```ext2spice```
@@ -244,10 +246,14 @@ Use: ```plot y vs time a``` to plot the graph
 ![image](https://user-images.githubusercontent.com/92938137/183048616-9bf494cd-ef27-4bdb-a95d-3953e4c8874e.png)
 ![image](https://user-images.githubusercontent.com/92938137/183049712-c086fddb-bee9-4de5-8a29-9d4f5f52b118.png)
 From the graph we characterize the cell.
+
 Rise time = 0.07823ns
+
 Cell Rise Delay = 0.05384ns
+
 Cell Fall Dealy = 0.0289ns
 
+## Lab Exercise
 
 
 
