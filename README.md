@@ -103,6 +103,8 @@ More information can be obtained from [here](https://github.com/efabless/openlan
  ```prep -design <design-name>```.
  Here since we are working with picorv32a our design-name is picorv32a.
  
+ ![image](https://user-images.githubusercontent.com/92938137/183097067-520aa347-741d-4bb2-94a0-3456fad2c120.png)
+
  ### Run Synthesis
 Once the design preperation is done, our first step is to perform synthesis of the loaded design. This is done using the following command:
 ```run_synthesis```
