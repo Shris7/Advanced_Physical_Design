@@ -201,8 +201,25 @@ Types of characterization include:
 # Day-3: Design Cell Library using Magic Layour and ngspice characterization
 ## Labs for CMOS inverter ngspice simulation
 The inverters is designed using Magic tool. It takes the tech file,that is,```sky130A.tech``` and the ```.mag``` file as the input.
-The below snapshot shows the inverter layout with and without drc.
+The below snapshot shows the inverter layout with and without drc.DRC is a tool in magic that ensures that our layout is error free.
 
 ![image](https://user-images.githubusercontent.com/92938137/183023069-20dda582-b380-42a5-ad09-0db6b4af521f.png)
 
 ![image](https://user-images.githubusercontent.com/92938137/183023531-dcd2e5da-d5ad-466a-955d-54497e391546.png)
+
+##Create Standard Cell Layout and Extract SPICE Netlist
+In order to simulate and verify the standard cell designed, we must first extract it to obtain its SPICE netlist. There are two steps to extract a file.
+- Create a ```.ext``` file: ```extract all```
+![image](https://user-images.githubusercontent.com/92938137/183024993-ce6210be-4457-44b3-b3b3-2d678175dc1e.png)
+
+.ext file:
+
+![image](https://user-images.githubusercontent.com/92938137/183024922-f988d3d1-f12a-475a-a6ad-29407608ed9b.png)
+![image](https://user-images.githubusercontent.com/92938137/183024877-46b60f09-ee4a-46a7-8990-d549cd35ae46.png)
+
+- Extract to SPICE along with extracting the parasitic capacitors. This creates a ```.spice``` file.
+``` ext2spice cthresh 0 rthresh 0```
+```ext2spice```
+
+![image](https://user-images.githubusercontent.com/92938137/183025499-c9ab9379-2021-4f13-b7a5-82232175337e.png)
+![image](https://user-images.githubusercontent.com/92938137/183025707-fceb9e6a-55a0-4d1c-ae62-61220c020292.png)
