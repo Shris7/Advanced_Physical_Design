@@ -33,7 +33,10 @@ This file contains the information learnt during the [Advanced Physical Design](
      - [Labs for CMOS inverter ngspice simulation](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#labs-for-cmos-inverter-ngspice-simulation)
      - [Create Standard Cell Layout and Extract SPICE Netlist](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#create-standard-cell-layout-and-extract-spice-netlist)
      - [Transient Analysis Using Ngspice](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#transient-analysis-using-ngspice)
-     
+ - [Day 4: Pre-layout Timing Analysis and Importance of Good Clock Tree](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#day-4-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
+   - [Steps to convert Grid Info to Track Info](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#steps-to-convert-grid-info-to-track-info)
+   - [Steps to convert Magic layout to std cell LEF](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#steps-to-convert-magic-layout-to-std-cell-lef)
+   
  # Intoduction To RTL to GDSII flow
  RTL to GDSII flow is the process of converting a RTL design that is, a register to transfer level that consists of synchronous digital blocks and signals between the hardware registers and the logical operations performed on these signals, to a GDSII design which is a database file. GDSII is the de facto industry standard for EDA data exchange for integrated circuits.
  A complete RTL to GDSII flow consists of the following steps:
@@ -254,9 +257,28 @@ Cell Rise Delay = 0.05384ns
 
 Cell Fall Dealy = 0.0289ns
 
+# Day 4: Pre-layout Timing Analysis and Importance of Good Clock Tree
+To perform placement and routing one does not nedd the amount of detailing magic provides us with. We only need information about the input/output port,the power and ground port. All this information is provided to us by the LEF file.
 
+## Steps to convert Grid Info to Track Info
+There are certain guidelines that one must follow while making a std cell set:
+- Input and Output port must lie on the intersection of the vertical and horizantal tracks
+- Width of the std cell must be in the odd multiple of horizantal pitch and lenght must be odd multiple of vertical pitch.Tracks are used during the routing phase.
 
+![image](https://user-images.githubusercontent.com/92938137/183089300-28cef31e-3c00-4b79-9ad9-acbc722d694a.png)
+![image](https://user-images.githubusercontent.com/92938137/183090067-ecafb019-c758-4546-a695-074323f54332.png)
+From the above snippet,we can conclude that the layout satifies both the above conditions above.
 
+## Steps to convert Magic layout to std cell LEF
+Once the layout satisfies the guidelines and the port along with the purpose of each port is set, one can extract the LEF file.
+The command used to create a LEF File is :
+
+```lef write```
+
+If we dont specify any file name, the lef file gets creted wiht the same name as the ```.mag``` file by default.
+
+![image](https://user-images.githubusercontent.com/92938137/183093691-035e5211-013c-401d-89be-c42db205fcfb.png)
+![image](https://user-images.githubusercontent.com/92938137/183093428-a8d7ca5b-1442-4801-a721-469f4ecb4738.png)
 
 
 
