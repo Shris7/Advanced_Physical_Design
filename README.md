@@ -33,7 +33,7 @@ This file contains the information learnt during the [Advanced Physical Design](
      - [Labs for CMOS inverter ngspice simulation](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#labs-for-cmos-inverter-ngspice-simulation)
      - [Create Standard Cell Layout and Extract SPICE Netlist](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#create-standard-cell-layout-and-extract-spice-netlist)
      - [Transient Analysis Using Ngspice](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#transient-analysis-using-ngspice)
-     - [Lab Exercise](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#lab-exercise)
+     
  # Intoduction To RTL to GDSII flow
  RTL to GDSII flow is the process of converting a RTL design that is, a register to transfer level that consists of synchronous digital blocks and signals between the hardware registers and the logical operations performed on these signals, to a GDSII design which is a database file. GDSII is the de facto industry standard for EDA data exchange for integrated circuits.
  A complete RTL to GDSII flow consists of the following steps:
@@ -253,7 +253,7 @@ Cell Rise Delay = 0.05384ns
 
 Cell Fall Dealy = 0.0289ns
 
-## Lab Exercise
+
 
 
 
