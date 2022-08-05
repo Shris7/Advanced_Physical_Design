@@ -201,3 +201,8 @@ Types of characterization include:
 # Day-3: Design Cell Library using Magic Layour and ngspice characterization
 ## Labs for CMOS inverter ngspice simulation
 The inverters is designed using Magic tool. It takes the tech file,that is,```sky130A.tech``` and the ```.mag``` file as the input.
+The below snapshot shows the inverter layout with and without drc.
+
+![image](https://user-images.githubusercontent.com/92938137/183023069-20dda582-b380-42a5-ad09-0db6b4af521f.png)
+
+![image](https://user-images.githubusercontent.com/92938137/183023531-dcd2e5da-d5ad-466a-955d-54497e391546.png)
