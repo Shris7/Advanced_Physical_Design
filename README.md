@@ -245,6 +245,7 @@ Use: ```plot y vs time a``` to plot the graph
 ![image](https://user-images.githubusercontent.com/92938137/183048662-064270ca-ca54-40ed-a61e-7c54edc8c8bd.png)
 ![image](https://user-images.githubusercontent.com/92938137/183048616-9bf494cd-ef27-4bdb-a95d-3953e4c8874e.png)
 ![image](https://user-images.githubusercontent.com/92938137/183049712-c086fddb-bee9-4de5-8a29-9d4f5f52b118.png)
+
 From the graph we characterize the cell.
 
 Rise time = 0.07823ns
