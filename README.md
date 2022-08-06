@@ -282,6 +282,12 @@ If we dont specify any file name, the lef file gets creted wiht the same name as
 ![image](https://user-images.githubusercontent.com/92938137/183093691-035e5211-013c-401d-89be-c42db205fcfb.png)
 ![image](https://user-images.githubusercontent.com/92938137/183093428-a8d7ca5b-1442-4801-a721-469f4ecb4738.png)
 
+Once we create the ```.lef``` file copy the ```.lef``` and ```sky130_fd_sc_hd__*``` in the picorv32a folder. Run the openlane process again.
+Instead of running ```prep -design <design-name>``` we run ```prep -design <design-name> -tag <folder-name> -overwrite``` to overwrite in the same folder instead of creating a new one.
+![image](https://user-images.githubusercontent.com/92938137/183240688-0bb96d91-645a-4e92-a471-50c7a06802ef.png)
+![image](https://user-images.githubusercontent.com/92938137/183240783-49a1f416-855e-4d39-9dbc-c27a8df3c6f5.png)
+![image](https://user-images.githubusercontent.com/92938137/183240879-4593965c-9560-4b28-8ad7-5c101b03a90b.png)
+
 ## Timing analysis with ideal clocks using openSTA
 
 ## Clock Tree Synthesis TritonCTS and signal integrity
