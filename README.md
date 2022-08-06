@@ -288,5 +288,11 @@ If we dont specify any file name, the lef file gets creted wiht the same name as
 Clock tree synthesis is used to ensure that the clock signal is distributed equally to all the blocks of a sequential logic.One of the way to do so is using H-tree algorithm where it focuses on equilizing the clock wire length.
 Clock Net Shielding is used to protect the clock net from the outside signals to prevent unnecessary coupling that could cause problems like glitches and delay.
 
+# Day 5: Final steps for RTL2GDSII usint tritonRoute and openSTA
+## Routing and DRC Rule Check
+Routing is a process of not only connecting the input or output pin or  with the logic block or two points but also finding the best possible route to connect the source and target.
+These points must be connected with very limited zig-zag lines and as much as possible with L-shaped lines. 
+One of the way to perform routing is using the Maze Routing or Lee's Algorithm.
+There are few rules to be followed while perfomring routing including criteria to obey minimum wire width, minimum wire pitch,minimum wire spacing,etc.
 
-
+## Power Distribution Netwrok and Routing
