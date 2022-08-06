@@ -282,6 +282,11 @@ If we dont specify any file name, the lef file gets creted wiht the same name as
 ![image](https://user-images.githubusercontent.com/92938137/183093691-035e5211-013c-401d-89be-c42db205fcfb.png)
 ![image](https://user-images.githubusercontent.com/92938137/183093428-a8d7ca5b-1442-4801-a721-469f4ecb4738.png)
 
+## Timing analysis with ideal clocks using openSTA
+
+## Clock Tree Synthesis TritonCTS and signal integrity
+Clock tree synthesis is used to ensure that the clock signal is distributed equally to all the blocks of a sequential logic.One of the way to do so is using H-tree algorithm where it focuses on equilizing the clock wire length.
+Clock Net Shielding is used to protect the clock net from the outside signals to prevent unnecessary coupling that could cause problems like glitches and delay.
 
 
 
