@@ -36,7 +36,15 @@ This file contains the information learnt during the [Advanced Physical Design](
  - [Day 4: Pre-layout Timing Analysis and Importance of Good Clock Tree](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#day-4-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
    - [Steps to convert Grid Info to Track Info](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#steps-to-convert-grid-info-to-track-info)
    - [Steps to convert Magic layout to std cell LEF](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#steps-to-convert-magic-layout-to-std-cell-lef)
-   
+   - [Timing analysis with ideal clocks using openSTA](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#timing-analysis-with-ideal-clocks-using-opensta)
+   - [Clock Tree Synthesis TritonCTS and signal integrity](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#clock-tree-synthesis-tritoncts-and-signal-integrity)
+- [Day 5: Final steps for RTL2GDSII usint tritonRoute and openSTA](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#day-5-final-steps-for-rtl2gdsii-usint-tritonroute-and-opensta)
+   - [Routing and DRC Rule Check](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#routing-and-drc-rule-check)
+   - [Power Distribution Netwrok and Routing](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#power-distribution-netwrok-and-routing)
+   - [SPEF EXTRACTOR](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#spef-extractor)
+- [Acknowledgement](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#acknowledgement)
+
+
  # Intoduction To RTL to GDSII flow
  RTL to GDSII flow is the process of converting a RTL design that is, a register to transfer level that consists of synchronous digital blocks and signals between the hardware registers and the logical operations performed on these signals, to a GDSII design which is a database file. GDSII is the de facto industry standard for EDA data exchange for integrated circuits.
  A complete RTL to GDSII flow consists of the following steps:
