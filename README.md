@@ -38,9 +38,9 @@ This file contains the information learnt during the [Advanced Physical Design](
    - [Steps to convert Magic layout to std cell LEF](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#steps-to-convert-magic-layout-to-std-cell-lef)
    - [Timing analysis with ideal clocks using openSTA](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#timing-analysis-with-ideal-clocks-using-opensta)
    - [Clock Tree Synthesis TritonCTS and signal integrity](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#clock-tree-synthesis-tritoncts-and-signal-integrity)
-- [Day 5: Final steps for RTL2GDSII usint tritonRoute and openSTA](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#day-5-final-steps-for-rtl2gdsii-usint-tritonroute-and-opensta)
+- [Day 5: Final steps for RTL2GDSII using tritonRoute and openSTA](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#day-5-final-steps-for-rtl2gdsii-using-tritonroute-and-opensta)
    - [Routing and DRC Rule Check](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#routing-and-drc-rule-check)
-   - [Power Distribution Netwrok and Routing](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#power-distribution-netwrok-and-routing)
+   - [Power Distribution Network and Routing](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#power-distribution-network-and-routing)
    - [SPEF EXTRACTOR](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#spef-extractor)
 - [Acknowledgement](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#acknowledgement)
 
@@ -180,7 +180,7 @@ Placement in OpenLANE occurs in 2 stages:
 ![image](https://user-images.githubusercontent.com/92938137/182850477-af131735-68cb-4974-86b3-a1df56ae54dd.png)
 ![image](https://user-images.githubusercontent.com/92938137/182850890-ca606e86-3902-413a-a709-df44f2831769.png)
 
-## Cell Design and Charecterization Flows
+## Cell Design and Characterization Flows
 Cell design flow comprises of stages that provides entire flow for the design of standard cells.
 Standard cells are present in a library and they have information of the different componenets,their functionality and sizes too. The sizes of a componenet refers to their drive strength.It also has information on different threshold voltage which inadvertly affect the speed of the component.
 Cell Design flow has 3 typical steps:
@@ -268,7 +268,7 @@ Cell Rise Delay = 0.05384ns
 Cell Fall Dealy = 0.0289ns
 
 # Day 4: Pre-layout Timing Analysis and Importance of Good Clock Tree
-To perform placement and routing one does not nedd the amount of detailing magic provides us with. We only need information about the input/output port,the power and ground port. All this information is provided to us by the LEF file.
+To perform placement and routing one does not need the amount of detailing magic provides us with. We only need information about the input/output port,the power and ground port. All this information is provided to us by the LEF file.
 
 ## Steps to convert Grid Info to Track Info
 There are certain guidelines that one must follow while making a std cell set:
@@ -285,7 +285,7 @@ The command used to create a LEF File is :
 
 ```lef write```
 
-If we dont specify any file name, the lef file gets creted wiht the same name as the ```.mag``` file by default.
+If we dont specify any file name, the lef file gets created with the same name as the ```.mag``` file by default.
 
 ![image](https://user-images.githubusercontent.com/92938137/183093691-035e5211-013c-401d-89be-c42db205fcfb.png)
 ![image](https://user-images.githubusercontent.com/92938137/183093428-a8d7ca5b-1442-4801-a721-469f4ecb4738.png)
@@ -299,9 +299,8 @@ Instead of running ```prep -design <design-name>``` we run ```prep -design <desi
 ## Timing analysis with ideal clocks using openSTA
 The results obtained after running ```sta pre_sta.conf```.
 
-![image](https://user-images.githubusercontent.com/92938137/183269112-e64b0664-1b4d-45c9-8d5d-a25634448404.png)
 ![image](https://user-images.githubusercontent.com/92938137/183268731-05f44672-bd0b-4236-b844-38f2ebbaf482.png)
-![image](https://user-images.githubusercontent.com/92938137/183268710-1727beff-4dc6-4622-be2d-6bd70d0260e7.png)
+![image](https://user-images.githubusercontent.com/92938137/183269112-e64b0664-1b4d-45c9-8d5d-a25634448404.png)
 ![image](https://user-images.githubusercontent.com/92938137/183269446-9ddb5a6b-f027-4f5b-896f-256b31a0171d.png)
 
 Timing can be improved by:
@@ -319,26 +318,29 @@ To perform CTS use the command:
 ```run_cts```
 
 ![image](https://user-images.githubusercontent.com/92938137/183269498-0b8cd9dd-6947-46a3-9008-126504e04350.png)
-Once the CTS flow is done, we need to the STA after the entire clock tree is built.
+
+Once the CTS flow is done, we need to do the STA after the entire clock tree is built.
 This is done by invoking ```openroad``` inside openlane.
 
 ![image](https://user-images.githubusercontent.com/92938137/183270292-64a89760-663c-4c19-ab76-dd0803c47885.png)
 ![image](https://user-images.githubusercontent.com/92938137/183270385-0888b95c-e8e0-4fe3-91c3-738e9bd9c034.png)
+
 This leads to huge stack voilations.Instead we perform STA only for the typical libraries.
 
 ![image](https://user-images.githubusercontent.com/92938137/183270862-89e102ee-9e99-408e-91f2-2622a9cd03e0.png)
 
-# Day 5: Final steps for RTL2GDSII usint tritonRoute and openSTA
+# Day 5: Final steps for RTL2GDSII using tritonRoute and openSTA
 ## Routing and DRC Rule Check
 Routing is a process of not only connecting the input or output pin or  with the logic block or two points but also finding the best possible route to connect the source and target.
 These points must be connected with very limited zig-zag lines and as much as possible with L-shaped lines. 
 One of the way to perform routing is using the Maze Routing or Lee's Algorithm.
 There are few rules to be followed while perfomring routing including criteria to obey minimum wire width, minimum wire pitch,minimum wire spacing,etc.
 
-## Power Distribution Netwrok and Routing
+## Power Distribution Network and Routing
 To perform power distribution use the following command:
 
-```gne_pdn```
+```gen_pdn```
+
 ![image](https://user-images.githubusercontent.com/92938137/183272220-d2c6e682-53e9-4657-93ab-a3ce2f9530ce.png)
 ![image](https://user-images.githubusercontent.com/92938137/183272279-c40d2750-ee17-45fb-8cda-a98ac3989ace.png)
 ![image](https://user-images.githubusercontent.com/92938137/183272247-57044c12-179d-4d6d-a9d1-bc87359967de.png)
@@ -354,7 +356,7 @@ Routing is done using the following command:
 
 ![image](https://user-images.githubusercontent.com/92938137/183272470-03f12bc0-7f51-4b87-a8db-4ba3b5f25dda.png)
 
-After performing routing if there are any drc errors we must manually check and correct them out wiht the help of ```tritonRoute.drc``` file.
+After performing routing if there are any drc errors we must manually check and correct them out with the help of ```tritonRoute.drc``` file.
 
 ## SPEF EXTRACTOR
 Once routing is done,parasitics can be extracted to perform sign-off post route STA Analysis using a SPEF File.
