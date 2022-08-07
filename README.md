@@ -328,3 +328,21 @@ One of the way to perform routing is using the Maze Routing or Lee's Algorithm.
 There are few rules to be followed while perfomring routing including criteria to obey minimum wire width, minimum wire pitch,minimum wire spacing,etc.
 
 ## Power Distribution Netwrok and Routing
+To perform power distribution use the following command:
+
+```gne_pdn```
+![image](https://user-images.githubusercontent.com/92938137/183272220-d2c6e682-53e9-4657-93ab-a3ce2f9530ce.png)
+![image](https://user-images.githubusercontent.com/92938137/183272279-c40d2750-ee17-45fb-8cda-a98ac3989ace.png)
+![image](https://user-images.githubusercontent.com/92938137/183272247-57044c12-179d-4d6d-a9d1-bc87359967de.png)
+
+To perform Routing:
+OpenLANE uses TritonRoute as the routing engine.Like placement, routing consists of two stages:
+- Global Routing-this is done by fast route
+- Detailed Routing-this is done by detailed route
+
+Routing is done using the following command:
+
+```run_routing```
+
+![image](https://user-images.githubusercontent.com/92938137/183272470-03f12bc0-7f51-4b87-a8db-4ba3b5f25dda.png)
+After performing routing if there are any drc errors we must manually check and correct them out wiht the help of ```tritonRoute.drc``` file.
