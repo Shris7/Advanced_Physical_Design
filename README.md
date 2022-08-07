@@ -289,10 +289,36 @@ Instead of running ```prep -design <design-name>``` we run ```prep -design <desi
 ![image](https://user-images.githubusercontent.com/92938137/183240879-4593965c-9560-4b28-8ad7-5c101b03a90b.png)
 
 ## Timing analysis with ideal clocks using openSTA
+The results obtained after running ```sta pre_sta.conf```.
+
+![image](https://user-images.githubusercontent.com/92938137/183269112-e64b0664-1b4d-45c9-8d5d-a25634448404.png)
+![image](https://user-images.githubusercontent.com/92938137/183268731-05f44672-bd0b-4236-b844-38f2ebbaf482.png)
+![image](https://user-images.githubusercontent.com/92938137/183268710-1727beff-4dc6-4622-be2d-6bd70d0260e7.png)
+![image](https://user-images.githubusercontent.com/92938137/183269446-9ddb5a6b-f027-4f5b-896f-256b31a0171d.png)
+
+Timing can be improved by:
+- Scaling the buffer.
+- Setting a maximum fan-out for the logic.
+- Increasing the time period of the clock.
 
 ## Clock Tree Synthesis TritonCTS and signal integrity
 Clock tree synthesis is used to ensure that the clock signal is distributed equally to all the blocks of a sequential logic.One of the way to do so is using H-tree algorithm where it focuses on equilizing the clock wire length.
 Clock Net Shielding is used to protect the clock net from the outside signals to prevent unnecessary coupling that could cause problems like glitches and delay.
+In OpenLANE we perform CTS using TritonCTS tool.
+
+To perform CTS use the command:
+
+```run_cts```
+
+![image](https://user-images.githubusercontent.com/92938137/183269498-0b8cd9dd-6947-46a3-9008-126504e04350.png)
+Once the CTS flow is done, we need to the STA after the entire clock tree is built.
+This is done by invoking ```openroad``` inside openlane.
+
+![image](https://user-images.githubusercontent.com/92938137/183270292-64a89760-663c-4c19-ab76-dd0803c47885.png)
+![image](https://user-images.githubusercontent.com/92938137/183270385-0888b95c-e8e0-4fe3-91c3-738e9bd9c034.png)
+This leads to huge stack voilations.Instead we perform STA only for the typical libraries.
+
+![image](https://user-images.githubusercontent.com/92938137/183270862-89e102ee-9e99-408e-91f2-2622a9cd03e0.png)
 
 # Day 5: Final steps for RTL2GDSII usint tritonRoute and openSTA
 ## Routing and DRC Rule Check
