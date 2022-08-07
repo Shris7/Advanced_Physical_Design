@@ -24,7 +24,7 @@ This file contains the information learnt during the [Advanced Physical Design](
     - [Library Binding and Placement](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#library-binding-and-placement)
       - [Placement](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#placement)
       - [Placement using OpenLANE](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#placement-using-openlane)
-    - [ Cell Design and Charecterization Flows](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#cell-design-and-charecterization-flows)
+    - [Cell Design and Charecterization Flows](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#cell-design-and-charecterization-flows)
       - [Inputs](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#inputs)
       - [Design Steps](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#design-steps)
       - [Outputs](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#outputs)
@@ -346,3 +346,11 @@ Routing is done using the following command:
 
 ![image](https://user-images.githubusercontent.com/92938137/183272470-03f12bc0-7f51-4b87-a8db-4ba3b5f25dda.png)
 After performing routing if there are any drc errors we must manually check and correct them out wiht the help of ```tritonRoute.drc``` file.
+
+## SPEF EXTRACTOR
+Once routing is done,parasitics can be extracted to perform sign-off post route STA Analysis using a SPEF File.
+In regards to this workshop, SPEF Extractor has not been included in OpenLANE yet.
+
+# Acknowledgement
+- [Nickson Jose,](https://github.com/nickson-jose)VSD VLSI Engineer
+- [Kunal Ghosh,](https://github.com/kunalg123)Co-founder VSD Corp,Pvt Ltd.
