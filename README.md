@@ -353,6 +353,7 @@ Routing is done using the following command:
 ```run_routing```
 
 ![image](https://user-images.githubusercontent.com/92938137/183272470-03f12bc0-7f51-4b87-a8db-4ba3b5f25dda.png)
+
 After performing routing if there are any drc errors we must manually check and correct them out wiht the help of ```tritonRoute.drc``` file.
 
 ## SPEF EXTRACTOR
