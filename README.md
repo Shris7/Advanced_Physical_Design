@@ -357,7 +357,7 @@ Routing is done using the following command:
 ![image](https://user-images.githubusercontent.com/92938137/183272470-03f12bc0-7f51-4b87-a8db-4ba3b5f25dda.png)
 
 After performing routing if there are any drc errors we must manually check and correct them out with the help of ```tritonRoute.drc``` file.
-
+ALso as done with placement we can view the magic terminal after perfomring routing.
 ## SPEF EXTRACTOR
 Once routing is done,parasitics can be extracted to perform sign-off post route STA Analysis using a SPEF File.
 In regards to this workshop, SPEF Extractor has not been included in OpenLANE yet.
