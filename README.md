@@ -41,7 +41,7 @@ This file contains the information learnt during the [Advanced Physical Design](
 - [Day 5: Final steps for RTL2GDSII using tritonRoute and openSTA](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#day-5-final-steps-for-rtl2gdsii-using-tritonroute-and-opensta)
    - [Routing and DRC Rule Check](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#routing-and-drc-rule-check)
    - [Power Distribution Network and Routing](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#power-distribution-network-and-routing)
-   - [SPEF EXTRACTOR](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#spef-extractor)
+   
 - [Acknowledgement](https://github.com/Shris7/Advanced_Physical_Design/blob/main/README.md#acknowledgement)
 
 
@@ -357,13 +357,11 @@ Routing is done using the following command:
 ![image](https://user-images.githubusercontent.com/92938137/183272470-03f12bc0-7f51-4b87-a8db-4ba3b5f25dda.png)
 
 After performing routing if there are any drc errors we must manually check and correct them out with the help of ```tritonRoute.drc``` file.
-Also as done with placement we can view the magic terminal after perfomring routing.
+Also as done with placement we can view the magic terminal after performing routing.
 
 ![image](https://user-images.githubusercontent.com/92938137/183342172-570b09e2-bef5-4336-b625-bc7897d3855c.png)
 
-## SPEF EXTRACTOR
-Once routing is done,parasitics can be extracted to perform sign-off post route STA Analysis using a SPEF File.
-In regards to this workshop, SPEF Extractor has not been included in OpenLANE yet.
+
 
 # Acknowledgement
 - [Nickson Jose,](https://github.com/nickson-jose)VSD VLSI Engineer
