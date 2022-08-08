@@ -301,7 +301,7 @@ The results obtained after running ```sta pre_sta.conf```.
 
 ![image](https://user-images.githubusercontent.com/92938137/183268731-05f44672-bd0b-4236-b844-38f2ebbaf482.png)
 ![image](https://user-images.githubusercontent.com/92938137/183269112-e64b0664-1b4d-45c9-8d5d-a25634448404.png)
-![image](https://user-images.githubusercontent.com/92938137/183269446-9ddb5a6b-f027-4f5b-896f-256b31a0171d.png)
+![image](https://user-images.githubusercontent.com/92938137/183341406-56fb0dc3-7cb5-486d-b72c-f806e974e97a.png)
 
 Timing can be improved by:
 - Scaling the buffer.
